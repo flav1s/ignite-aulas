@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    // "target": "es5",
+    // "module": "commonjs",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // adiciona tipagem de HTML
+    "allowJs": true, // terá arquivos jsx e tsx na aplicação, ideal para transição
+    "jsx": "react-jsx", // permite uso de jsx
+    "noEmit": true,
+    "strict": true, // entrar no modo stric do js
+    "moduleResolution": "node",
+    "resolveJsonModule": true, // adiciona a possibilidade de importar arquivos json
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"] // todo o código da aplicação está dentro de src (raiz do projeto)
+}
