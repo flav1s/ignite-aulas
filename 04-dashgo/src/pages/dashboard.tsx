@@ -1,6 +1,5 @@
 import { Box, Flex, SimpleGrid, Text, theme } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
-import { smooth } from "popmotion";
 
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
@@ -29,7 +28,7 @@ const options = {
     enabled: false,
   },
   xaxis: {
-    type: "datetime",
+    type: "datetime" as "datetime",
     axisBorder: {
       color: theme.colors.gray[600],
     },
