@@ -1,4 +1,5 @@
-import { createServer, Model } from "miragejs";
+import { createServer, Factory, Model } from "miragejs";
+import faker from "faker";
 
 type User = {
   name: string;
@@ -10,6 +11,23 @@ export function makeServer() {
   const server = createServer({
     models: {
       user: Model.extend<Partial<User>>({}),
+    },
+    // Gera dados em massa
+    factories: {
+      user: Factory.extend({
+        name(i: number) {
+          return `User ${i + 1}`;
+        },
+        email() {
+          return faker.internet.email().toLocaleLowerCase();
+        },
+        createdAt() {
+          return faker.date.recent(10, new Date());
+        },
+      }),
+    },
+    seeds(server) {
+      server.createList("user", 200); // server.createList(NAME_FACTORY, NUMBER_OF_ENTRIES)
     },
     routes() {
       this.namespace = "api"; // rotas sempre começam com /api
