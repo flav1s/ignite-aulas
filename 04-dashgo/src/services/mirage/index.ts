@@ -27,7 +27,7 @@ export function makeServer() {
       }),
     },
     seeds(server) {
-      server.createList("user", 200); // server.createList(NAME_FACTORY, NUMBER_OF_ENTRIES)
+      server.createList("user", 10); // server.createList(NAME_FACTORY, NUMBER_OF_ENTRIES)
     },
     routes() {
       this.namespace = "api"; // rotas sempre começam com /api
