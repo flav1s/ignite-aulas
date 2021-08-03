@@ -53,6 +53,7 @@ export function makeServer() {
         );
       });
 
+      this.get("/users/:id");
       this.post("/users");
 
       this.namespace = ""; // reseta o namespace para não confundir caso o tenha rotas api de dentro do next
