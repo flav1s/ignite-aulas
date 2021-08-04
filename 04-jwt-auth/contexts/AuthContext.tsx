@@ -41,8 +41,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setUser({ email, permissions, roles });
       });
     }
-  }),
-    [];
+  }, []);
 
   async function signIn({ email, password }: SignInCredentials) {
     try {
